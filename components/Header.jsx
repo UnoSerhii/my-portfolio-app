@@ -7,7 +7,7 @@ import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 bg-pink-50/20 text-white">
+    <header className="py-8 xl:py-12 text-white">
       <div className="container mx-auto flex justify-between items-center">
           <Logo />
         <div className="hidden xl:flex items-center gap-8">
