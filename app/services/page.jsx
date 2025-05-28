@@ -8,25 +8,29 @@ const services = [
   {
     num: "01",
     title: "Web Development",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    description:
+      "Development of modern, responsive websites and web applications using Next.js, React, TypeScript, and SCSS.",
     link: "#",
   },
   {
     num: "02",
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    title: "E-commerce Integration",
+    description:
+      "Creation of e-commerce functionalities: cart, payment, filters, sorting, working with APIs and localStorage.",
     link: "#",
   },
   {
     num: "03",
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    title: "Interactive UI & Animation",
+    description:
+      "Implementation of animated interfaces using Framer Motion, GSAP, and HeroUI with 'wow' effects.",
     link: "#",
   },
   {
     num: "04",
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    title: "Backend for Web Apps",
+    description:
+      "Development of backend services using Express.js with JWT authentication, MongoDB, geolocation, order processing, and REST APIs.",
     link: "#",
   },
 ];
@@ -37,7 +41,10 @@ const Services = () => {
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
+          animate={{
+            opacity: 1,
+            transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+          }}
           className="grid grid-cols-1 md:grid-cols-2 gap-[40px]"
         >
           {services.map((service, index) => (
@@ -47,7 +54,10 @@ const Services = () => {
               transition={{ type: "spring", stiffness: 600, damping: 20 }}
               className="flex-1 flex flex-col justify-center gap-6 group p-6 rounded-2xl transition-all duration-500 hover:bg-[#161616] hover:shadow-2xl hover:shadow-accent/20 border border-transparent hover:border-accent/30 cursor-pointer"
             >
-              <Link href={service.link} className="flex flex-col items-start justify-between gap-2 mb-4 w-full h-full">
+              <Link
+                href={service.link}
+                className="flex flex-col items-start justify-between gap-2 mb-4 w-full h-full"
+              >
                 <div className="flex items-center gap-2">
                   <h2 className="h2 font-extrabold text-white transition-all duration-500 ease-in-out group-hover:text-accent">
                     {service.num}
@@ -57,7 +67,9 @@ const Services = () => {
                 <h3 className="h3 font-extrabold group-hover:text-accent transition-all duration-500">
                   {service.title}
                 </h3>
-                <p className="max-w-[500px] text-white/60">{service.description}</p>
+                <p className="max-w-[500px] text-white/60">
+                  {service.description}
+                </p>
                 <div className="border-b border-accent w-full"></div>
               </Link>
             </motion.div>

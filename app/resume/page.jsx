@@ -3,7 +3,15 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3, FaReact, FaJs, FaGithub, FaNodeJs, FaFigma } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3,
+  FaReact,
+  FaJs,
+  FaGithub,
+  FaNodeJs,
+  FaFigma,
+} from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiNextdotjs } from "react-icons/si";
 
 const about = [
@@ -25,21 +33,29 @@ const about = [
 const experience = [
   {
     title: "Experience",
-    description: "Practical experience in modern web development and real-world project delivery.",
+    description:
+      "Practical experience in modern web development and real-world project delivery.",
     items: [
       {
-        company: "Freelance",
+        company: "Craftera Digital",
         position: "Frontend Developer",
-        period: "2022 - Present",
+        period: "Jun 2024 – Feb 2025",
         description:
-          "Developed responsive websites, landing pages, and e-commerce projects using React.js, Next.js, and Tailwind CSS. Worked closely with clients to translate their vision into functional products.",
+          "Worked on projects for multiple clinics, responsible for frontend development: Developed responsive layouts and interactive elements, used Nunjucks and JavaScript to build websites, and collaborated with the team to integrate all functionalities and enhance the user experience.",
       },
       {
-        company: "Creative Web Studio",
-        position: "Junior Frontend Developer",
-        period: "2021 - 2022",
+        company: "Upwork",
+        position: "Freelancer",
+        period: "Jan 2024 – May 2024",
         description:
-          "Participated in building and maintaining web applications. Gained practical skills in JavaScript, SCSS, and CMS integration.",
+          "Developed and maintained e-commerce websites using React and Next.js, focused on building responsive layouts with SCSS to improve UX/UI, optimized storefront performance and checkout flows for better conversions, and collaborated with clients to develop custom e-commerce solutions.",
+      },
+      {
+        company: "FusionUp",
+        position: "Frontend Developer",
+        period: "May 2023 - December 2023",
+        description:
+          "Developed responsive layouts using HTML, CSS, and SCSS, collaborated with designers to create interactive UI elements, and helped troubleshoot and maintain web application functionality.",
       },
     ],
   },
@@ -48,19 +64,22 @@ const experience = [
 const education = [
   {
     title: "Education",
-    description: "Formal education and courses focused on Frontend Development.",
+    description:
+      "Formal education and courses focused on Frontend Development.",
     items: [
+      {
+        institution: " SoftServe Academy",
+        degree: "Practical React",
+        period: "2023",
+        description:
+          "Successfully completed the Practical React course at SoftServe Academy, gaining hands-on experience in building interactive web applications using React.js, enhancing frontend development skills with modern tools and best practices.",
+      },
       {
         institution: "IT Academy Online",
         degree: "Frontend Development Bootcamp",
-        period: "2021",
-        description: "Completed an intensive program covering JavaScript, React.js, and modern UI/UX practices.",
-      },
-      {
-        institution: "University of Technology",
-        degree: "Bachelor's Degree in Computer Science",
-        period: "2016 - 2020",
-        description: "Studied software engineering fundamentals, algorithms, and system design.",
+        period: "2022",
+        description:
+          "Completed an intensive program covering JavaScript, and modern UI/UX practices.",
       },
     ],
   },
@@ -89,11 +108,17 @@ const Resume = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 0.2, duration: 0.6, ease: "easeOut" } }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeOut" },
+      }}
       className="min-h-[80vh] flex items-center justify-center py-12"
     >
       <div className="container mx-auto px-4">
-        <Tabs defaultValue="experience" className="flex flex-col lg:flex-row gap-10">
+        <Tabs
+          defaultValue="experience"
+          className="flex flex-col lg:flex-row gap-10"
+        >
           <TabsList className="flex flex-col w-full h-full max-w-[300px] mx-auto xl:mx-0 gap-4">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="about">About</TabsTrigger>
@@ -103,9 +128,17 @@ const Resume = () => {
 
           <div className="min-h-[70vh] w-full">
             <TabsContent value="experience" className="w-full">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-8">
-                <h3 className="text-4xl font-bold text-accent">{experience[0].title}</h3>
-                <p className="text-white/60 max-w-[600px]">{experience[0].description}</p>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex flex-col gap-8"
+              >
+                <h3 className="text-4xl font-bold text-accent">
+                  {experience[0].title}
+                </h3>
+                <p className="text-white/60 max-w-[600px]">
+                  {experience[0].description}
+                </p>
                 <ScrollArea className="h-[400px]">
                   <ul className="space-y-8">
                     {experience[0].items.map((item, index) => (
@@ -114,10 +147,15 @@ const Resume = () => {
                         className="bg-[#232329] h-auto rounded-xl py-6 px-10 flex flex-col justify-center items-center lg:items-start gap-1"
                       >
                         <p className="flex items-center gap-2 text-white/60">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent inline-block"></span> {item.company}
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent inline-block"></span>{" "}
+                          {item.company}
                         </p>
-                        <h4 className="text-2xl font-semibold text-accent">{item.position}</h4>
-                        <span className="text-sm text-gray-400">{item.period}</span>
+                        <h4 className="text-2xl font-semibold text-accent">
+                          {item.position}
+                        </h4>
+                        <span className="text-sm text-gray-400">
+                          {item.period}
+                        </span>
                         <p className="mt-2 text-gray-300">{item.description}</p>
                       </li>
                     ))}
@@ -146,14 +184,22 @@ const Resume = () => {
                       key={index}
                       className="bg-[#232329] rounded-lg py-4 px-6 flex flex-col items-center lg:items-start gap-2 transition-all duration-500 hover:bg-[#161616] hover:shadow-2xl hover:shadow-accent/20 border border-transparent hover:border-accent/30 cursor-pointer"
                     >
-                      <p className="text-white/80 text-sm font-medium">{item.fieldName}</p>
+                      <p className="text-white/80 text-sm font-medium">
+                        {item.fieldName}
+                      </p>
                       <p className="text-gray-400 text-sm">
                         {item.fieldName === "Phone" ? (
-                          <a href={`tel:${item.fieldValue}`} className="text-accent hover:underline">
+                          <a
+                            href={`tel:${item.fieldValue}`}
+                            className="text-accent hover:underline"
+                          >
                             {item.fieldValue}
                           </a>
                         ) : item.fieldName === "Email" ? (
-                          <a href={`mailto:${item.fieldValue}`} className="text-accent hover:underline">
+                          <a
+                            href={`mailto:${item.fieldValue}`}
+                            className="text-accent hover:underline"
+                          >
                             {item.fieldValue}
                           </a>
                         ) : (
@@ -167,9 +213,17 @@ const Resume = () => {
             </TabsContent>
 
             <TabsContent value="education" className="w-full">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-8">
-                <h3 className="text-4xl font-bold text-accent">{education[0].title}</h3>
-                <p className="text-white/60 max-w-[600px]">{education[0].description}</p>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex flex-col gap-8"
+              >
+                <h3 className="text-4xl font-bold text-accent">
+                  {education[0].title}
+                </h3>
+                <p className="text-white/60 max-w-[600px]">
+                  {education[0].description}
+                </p>
                 <ScrollArea className="h-[400px]">
                   <ul className="space-y-8">
                     {education[0].items.map((item, index) => (
@@ -181,8 +235,12 @@ const Resume = () => {
                           <span className="w-[6px] h-[6px] rounded-full bg-accent inline-block"></span>{" "}
                           {item.institution}
                         </p>
-                        <h4 className="text-2xl font-semibold text-accent">{item.degree}</h4>
-                        <span className="text-sm text-gray-400">{item.period}</span>
+                        <h4 className="text-2xl font-semibold text-accent">
+                          {item.degree}
+                        </h4>
+                        <span className="text-sm text-gray-400">
+                          {item.period}
+                        </span>
                         <p className="mt-2 text-gray-300">{item.description}</p>
                       </li>
                     ))}
@@ -192,18 +250,30 @@ const Resume = () => {
             </TabsContent>
 
             <TabsContent value="skills" className="w-full">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-8">
-                <h3 className="text-4xl font-bold text-accent">{skills[0].title}</h3>
-                <p className="text-white/60 max-w-[600px]">{skills[0].description}</p>
-                
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex flex-col gap-8"
+              >
+                <h3 className="text-4xl font-bold text-accent">
+                  {skills[0].title}
+                </h3>
+                <p className="text-white/60 max-w-[600px]">
+                  {skills[0].description}
+                </p>
+
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
                   {skills[0].items.map((item, index) => (
                     <div
                       key={index}
                       className="bg-[#232329] rounded-xl py-6 flex flex-col justify-center items-center gap-4 transition-all duration-500 hover:scale-105 hover:bg-[#161616] hover:shadow-2xl hover:shadow-accent/20 border border-transparent hover:border-accent/30 cursor-pointer"
                     >
-                      <div className="text-5xl text-accent shadow-lg p-4 rounded-full bg-[#333]">{item.icon}</div>
-                      <p className="text-white text-center font-semibold">{item.skill}</p>
+                      <div className="text-5xl text-accent shadow-lg p-4 rounded-full bg-[#333]">
+                        {item.icon}
+                      </div>
+                      <p className="text-white text-center font-semibold">
+                        {item.skill}
+                      </p>
                     </div>
                   ))}
                 </div>
