@@ -119,9 +119,9 @@ const Contact = () => {
                 "rounded-xl"
               )}
             >
-              <h3 className="text-4xl text-accent">Let's work together</h3>
+              <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
               <p className="text-white/60">
-                Tell me about your project and I'll get back to you as soon as possible.
+                Tell me about your project and I&apos;ll get back to you as soon as possible.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
